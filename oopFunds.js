@@ -143,3 +143,4 @@ const myFlat = new Flat("delhi", "1000sqft", "3");
 
 // describeProperty(myLand);
 describeProperty(myFlat);
+
