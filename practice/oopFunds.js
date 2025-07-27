@@ -33,41 +33,7 @@ function makeItSpeak(animal) {
   animal.speak();
 }
 
-// makeItSpeak(new Animal("Cat"));
-// makeItSpeak(new Dog("Labrador"));
 
-class Student {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  study() {
-    console.log(`${this.name} is studying`);
-  }
-}
-
-class GraduateStudent extends Student {
-  constructor(name, age, thesisTopic) {
-    super(name, age);
-    this.thesisTopic = thesisTopic;
-  }
-
-  research() {
-    console.log(`${this.name} is researching on ${this.thesisTopic}`);
-  }
-}
-
-function makeItStudy(student) {
-  student.study();
-  if (student instanceof GraduateStudent) {
-    student.research();
-  }
-  console.log(`${student.name} is ${student.age} years old`);
-}
-
-// makeItStudy(new Student("Alice", 20));
-// makeItStudy(new GraduateStudent("Bob", 24, "Quantum Computing"));
 
 class Vehicle {
   constructor(brand, wheels) {
@@ -136,7 +102,7 @@ function describeProperty(property) {
   if (property instanceof Flat) {
     property.describeRooms();
   }
-}
+} 
 
 const myLand = new Property("mumbai", "1000sqm");
 const myFlat = new Flat("delhi", "1000sqft", "3");
@@ -144,3 +110,35 @@ const myFlat = new Flat("delhi", "1000sqft", "3");
 // describeProperty(myLand);
 describeProperty(myFlat);
 
+
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  study() {
+    console.log(`${this.name} is ${this.age} years old and is studying.`);
+  }
+}
+
+class GraduateStudent extends Student{
+  constructor(name, age, thesisTopic) {
+    super(name, age);
+    this.thesisTopic = thesisTopic;
+  }
+  research() {
+    console.log(`${this.name} is doing research in ${this.thesisTopic}`);
+  }
+}
+
+function makeItStudy(student) {
+  student.study();
+  if (student instanceof GraduateStudent) {
+    student.research();
+  }
+} 
+
+const kid = new Student("Tirth", "26");
+const man = new GraduateStudent("Bhatt", "30", "nanotechnology");
+makeItStudy(kid);
+makeItStudy(man);
